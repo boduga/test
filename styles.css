@@ -92,6 +92,20 @@ header h1 {
     margin-bottom: 1rem;
     font-weight: 300;
     letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.tagline::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    opacity: 0.5;
 }
 
 /* Theme toggle button */
@@ -101,9 +115,6 @@ header h1 {
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--text);
-    position: absolute;
-    top: 20px;
-    right: 20px;
     padding: 5px;
     border-radius: 50%;
     width: 40px;
@@ -112,6 +123,15 @@ header h1 {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
+    margin-left: auto;
+}
+
+@media (max-width: 767px) {
+    #theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 }
 
 #theme-toggle:hover {
@@ -367,6 +387,7 @@ footer p {
     header .container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
     
     header h1 {
@@ -375,10 +396,6 @@ footer p {
     
     .tagline {
         margin-bottom: 0;
-    }
-    
-    #theme-toggle {
-        position: static;
     }
 }
 
